@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/3dp.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/chart.css">
+</head>
+<body>
+    <nav class="topnav navbar bg-dark Responsiv_Web">
+        <div class="nav_btn justify-content-between">
+            <ion-icon name="menu-outline" class="nav_toggle" id="nav_toggle"></ion-icon>
+        </div>
+        <a class="topnav_title me-auto" href="3dp_main.html"><div class="font">3dp</div></a>
+        <div class="dp-flex align-items-center mx-3 me-lg-0">
+            <ul class="topnav_content align-items-center ms-auto">
+                <li class="mr-01 dp-block"><span>NULL</span></li>
+                <li class="mr-01 dp-block"><span>NULL</span></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main_draw">
+        <div id="sidenav">
+            <nav class="sidenavbar justify-content-between bg-dark" id="side_navbar">
+                <div class="nav__list">
+                    <a onclick="javascript:show_page(1);" class="nav__link active" href="index.html">
+                        <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
+                        <span class="nav_name">Prediction(예측)</span>
+                    </a>
+                    <a onclick="javascript:show_page(2);" class="nav__link" href="3dp_search.html">
+                        <ion-icon name="search-outline" class="nav__icon"></ion-icon>
+                        <span class="nav_name">Recomendation(추천)</span>
+                    </a>
+                    <a onclick="javascript:show_page(3);" class="nav__link" href="3dp_map.html">
+                        <ion-icon name="map-outline" class="nav__icon"></ion-icon>
+                        <span class="nav_name">map(기업현황)</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="nav__link">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav_name">(NULL)</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <div id="main_content">
+            <main class="main_container">
+                <div class="dp-grid grid_main" id="main">
+                    <div class='dp-toflex' id="output">
+                        <div class="dp-grid grid_card --mt--01">
+                            <div class='page01_card border_col_red'>
+                                <h3 class="card_text_L">Width of bead</h3>
+                                <p class="card_text_R" id='Width_of_bead'></p>
+                            </div>
+                            <div class='page01_card border_col_orange'>
+                                <h3 class="card_text_L">Height of bead</h3>
+                                <p class="card_text_R" id='Height_of_bead'>&nbsp;</p>
+                            </div>
+                            <div class='page01_card border_col_blue'>
+                                <h3 class="card_text_L">Depth of bead</h3>
+                                <p class="card_text_R" id='Depth_of_bead'>&nbsp;</p>
+                            </div>
+                            <div class='page01_card border_col_green'>
+                                <h3 class="card_text_L">Width of HAZ</h3>
+                                <p class="card_text_R" id='Width_of_HAZ'>&nbsp;</p>
+                            </div>
+                            <div class='page01_card border_col_purple'>
+                                <h3 class="card_text_L">Depth of HAZ</h3>
+                                <p class="card_text_R" id='Depth_of_HAZ'>&nbsp;</p>
+                            </div>
+                        </div>
+                        <div class="chart_area dp-grid --m--01">
+                            <div class="chart_">
+                                <canvas class="chart_size" id="myChart_01"></canvas>
+                            </div>
+                            <div class="chart_">
+                                <canvas class="chart_size" id="myChart_02"></canvas>
+                            </div>
+                            <div class="chart_">
+                                <canvas class="chart_size" id="myChart_03"></canvas>
+                            </div>
+                            <div class="chart_">
+                                <canvas class="chart_size" id="myChart_04"></canvas>
+                            </div>
+                        </div>
+                    </div id="input">
+                    <div class='input_area dp-toflex'>
+                        <form>
+                            <div class="mx-3 margin-top-01">
+                                <label for="__LP__">Laser power</label>
+                                <input class="input_box" placeholder="260~500" autocomplete='off' id="__LP__" onblur="javascript:_input_check('__LP__');">
+                                <p class="input_error" id="__LP__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 margin-top-005">
+                                <label for="__SS__">Scan speed</label>
+                                <input class="input_box" placeholder="5~25" autocomplete='off' id="__SS__" onblur="javascript:_input_check('__SS__');">
+                                <p class="input_error" id="__SS__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 margin-top-005">
+                                <label for="__Tj__">Temp. jig</label>
+                                <input class="input_box" placeholder="21~22" autocomplete='off' id="__Tj__" onblur="javascript:_input_check('__Tj__');">
+                                <p class="input_error" id="__Tj__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 margin-top-005">
+                                <label for="__Ts__">Temp. sub</label>
+                                <input class="input_box" placeholder="21~27" autocomplete='off' id="__Ts__" onblur="javascript:_input_check('__Ts__');">
+                                <p class="input_error" id="__Ts__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 margin-top-005">
+                                <label for="__Tp__">Temp. powder</label>
+                                <input class="input_box" placeholder="25~29" autocomplete='off' id="__Tp__" onblur="javascript:_input_check('__Tp__');">
+                                <p class="input_error" id="__Tp__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 margin-top-005">
+                                <label for="__Tc__">Temp. chamber</label>
+                                <input class="input_box" placeholder="20~26" autocomplete='off' id="__Tc__" onblur="javascript:_input_check('__Tc__');">
+                                <p class="input_error" id="__Tc__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 margin-top-005">
+                                <label for="__HC__">Hum. Cham</label>
+                                <input class="input_box" placeholder="26~38" autocomplete='off' id="__HC__" onblur="javascript:_input_check('__HC__');">
+                                <p class="input_error" id="__HC__error">&nbsp;</p>
+                            </div>
+                            <div class="mx-3 Calc-btn" id="Calc_btn">
+                                <h4 class="m-0">button</h2>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+<script type="module" src="js/tfjs.mjs"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
