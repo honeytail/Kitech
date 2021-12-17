@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+    --nav--width: 75px;
+  
+    /* Colores */
+    --first-color: #0c5df4;
+    --bg-color: #12192c;
+    --sub-color: #b6cefc;
+    --white-color: #fff;
+  
+    /* Fuente y tipografia */
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  
+    /* z index */
+    --z-fixed: 100;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #424242;
+    background-color: whitesmoke;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: inherit;
+}
+
+a{
+    text-decoration-line: none;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-left: 0;
+    height: 4.5rem;
+    width: 100%;
+    z-index: 1039;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav_btn {
+    margin-left: 2rem;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.nav_toggle {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+.topnav_title{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    margin-right: 1rem;
+    font-size: 1.rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color : #fff;
+    cursor: pointer;
+}
+
+.topnav_content {
+    margin-top: 0;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    transition: all .5s;
+}
+
+.sidenavbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: var(--nav--width);
+    height: 95%;
+    color: white;
+    padding: 1.5rem 1.5rem 2rem 1rem;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all .5s;
+}
+
+.nav__list{
+    margin-top: 1rem;
+}
+
+.nav__brand {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.nav__toggle {
+    font-size: 1.25rem;
+    padding: .75rem;
+    cursor: pointer;
+}
+
+.nav__logo {
+    color: white;
+    font-weight: 600;
+}
+
+.nav__link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: .75rem;
+    padding: .5rem;
+    color: white;
+    border-radius: .5rem;
+    margin-bottom: 1.2rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.nav__icon {
+    font-size: 1.25rem;
+}
+
+.nav_name {
+    font-size: var(--small-font-size);
+    margin-left: 2rem;
+}
+
+/* 측면 메뉴 표시 */
+.expander {
+  width: calc(var(--nav--width) + 10rem);
+}
+
+/*********************************************************/
+    /*반응형 웹*/
+    /*모바일 환경*/
+    @media (max-width: 800px){
+  
+        .sidenavbar {
+          left: -100px;
+        }
+
+        .expander {
+          left : 0px;
+          width: calc(var(--nav--width) + 9.25rem);
+        }
+
+      }
+  
+      @media (max-width: 1600px) {
+      }
+  
+      @media (max-width: 1300px) {
+      }
+  
+      /*
+      .title { font-size: 18px; }
+   
+      @media (max-width: 1023px) {
+        .title { font-size: 16px; }
+      }
+      
+      @media (max-width: 767px) {
+        .title { font-size: 14px; }
+      }
+      
+      @media (max-width: 639px) {
+        .title { font-size: 12px; }
+      }
+      */
+  
+  /*********************************************************/

@@ -1,0 +1,32 @@
+.chart_{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* border-radius: 0.35rem; */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.chart_size{
+    width: 90%;
+    height: 500px;
+    padding: 1rem;
+}
+
+@media (max-width: 800px){
+    
+    .chart_{
+        height: 300px;
+        margin-top:1rem;
+    }
+
+}
