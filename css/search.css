@@ -1,0 +1,28 @@
+.search_select_tab{
+    width: 95%;
+    height: 95%;
+    margin:0;
+    position: relative;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: white;
+    background-clip: border-box;
+    border-width: 8px !important;
+    border-radius: 0.35rem;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    box-sizing: border-box;
+    text-align: center;
+    cursor:pointer;
+}
+
+.grid_tab{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 90px;
+    column-gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.choose_tab{
+    border-bottom: 1px solid;
+    border-color: red;
+}
