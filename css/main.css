@@ -1,0 +1,50 @@
+#prediction { width: 100%; padding-left: 1.5rem; padding-right: 1.5rem; margin-right: auto; margin-left: auto; }
+#prediction .page-header { margin-bottom: 1.5rem !important; }
+#prediction .header-title { color: #5a5c69 !important; margin-bottom: 0 !important; font-size: 1.75rem; font-weight: 400; line-height: 1.2; margin-top: 0; }
+
+#prediction .row { display: flex; flex-wrap: wrap; margin-right: -0.75rem; margin-left: -0.75rem; }
+#prediction .col-01 { position: relative; width: 100%; padding-right: .75rem; padding-left: .75rem; flex: 0 0 13.3%; max-width: 13.3%; margin-bottom: 1.5rem !important; }
+#prediction .card-input { display: flex; position: relative; flex-direction: column; min-width: 0; word-wrap: break-word; height: 100% !important; padding-bottom: .5rem !important; padding-top: .5rem !important; background-color: white; background-clip: border-box; border: 1px solid #e3e6f0; border-radius: .35rem; box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;}
+#prediction .card-body-input { flex: 1 1 auto; min-height: 1px; padding: 1.25rem; }
+#prediction .card-row-input { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
+#prediction .card-col-input { position: relative; width: 100%; flex-basis: 0; flex-grow: 1; max-width: 100%; margin-right: .5rem !important; padding-right: 0; padding-left: 0; }
+#prediction .card-text-input { font-size: 1rem; font-weight: 700 !important; color: #4e73df !important; text-transform: uppercase !important; margin-bottom: .5rem !important; white-space: nowrap; overflow: hidden; }
+#prediction .card-inputbox-input { display: block; width: 100%; height: calc(1.5rem + .75rem + 2px); padding: .375rem .75rem; margin: 0; font-family: inherit; font-size: 1rem; line-height: 400; line-height: 1.5; color: #6e707e; background-color: white; background-clip: padding-box; border: 1px solid #d1d3e2; border-radius: .35rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; overflow: visible; }
+#prediction .btn-col { margin-bottom: 1.5rem !important; flex: 0 0 6%; max-width: 6%; position: relative; width: 100%; padding-right: .75rem; padding-left: .75rem; }
+#prediction .btn-input { display: inline-block; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .35rem; transition: color .15s ease-in-out, background-color .15s ease-in-out color .15s ease-in-out .15s ease-in-out; -webkit-appearance: button; text-transform: none; overflow: visible; margin: 0; font-family: inherit; cursor: pointer; width: 100%; height: 100%; color: white; background-color: #4e73df; border-color: #4e73df; }
+#prediction .card-col-chart { position: relative; width: 100%; padding-left: .75rem; padding-right: .75rem; flex: 0 0 50%; max-width: 50%; }
+#prediction .card-chart { display: flex; position: relative; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: white; background-clip: border-box; border: 1px solid #e3e6f0; border-radius: .35rem; margin-bottom: 1.5rem !important; box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important; }
+#prediction .card-header-chart { padding: .75rem 1.25rem; margin-bottom: 0; padding-bottom: 1rem !important; padding-top: 1rem !important; background-color: #f8f9fc; border-bottom: 1px solid #e3e6f0; border-radius: calc(0.35rem - 1px) calc(0.35rem - px) 0 0 ; }
+#prediction .card-header-text-chart { color: #5a5c69 !important; margin: 0 !important; font-size: 1rem; font-weight: 700 !important; }
+#prediction .card-body-chart { flex: 1 1 auto; min-height: 1px; padding: 1.25rem; }
+#prediction .card-area-chart { position: relative; width: 100%; height: 20rem; }
+#prediction .card-mychart-01 { display: block; width: 514px; height: 320px; animation: chartjs-render-animation }
+#prediction .card-col-output { position: relative; width: 100%; padding-right: .75rem; padding-left: .75rem; margin-bottom: 1.5rem !important; flex: 0 0 20%; max-width: 20%; }
+#prediction .card-output { display: flex; position: relative; flex-direction: column; min-width: 0; height: 100% !important; padding-bottom: .5rem !important; padding-top: .5rem !important; box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important; word-wrap: break-word; background-color: white; background-clip: border-box; border: 1px solid #e3e6f0; border-radius: .35rem; }
+#prediction .card-body-output { flex: 1 1 auto; min-height: 1px; padding: 1.25rem; }
+#prediction .card-row-output { display: flex; flex-wrap: wrap; margin-right: 0; margin-left: 0; }
+#prediction .card-content-output { position: relative; width: 100%; flex-basis: 0; flex-grow: 1; max-width: 100%; padding-right: 0; padding-left: 0; margin-right: .5rem !important; }
+#prediction .card-text01-output { font-size: 1rem; columns: #4e73df !important; font-weight: 700 !important; text-transform: uppercase !important; margin-bottom: .5rem !important; }
+#prediction .card-text02-output { font-size: 1.25rem; font-weight: 700 !important; color: #5a5c69 !important; margin-bottom: 0 !important; line-height: 1.2; }
+
+#search { width: 100%; padding-left: 1.5rem; padding-right: 1.5rem; margin-right: auto; margin-left: auto; }
+#search .search-inputform { width: 25rem; margin-left: 1rem !important; margin-bottom: 1rem !important; margin-top: 1rem !important; margin-right: 1rem !important; max-width: 100% !important; flex-flow: row wrap; align-items: center; }
+#search .search-input { display: flex; position: relative; width: auto; flex-wrap: wrap; align-items: stretch; }
+#search .search-inputbox { border-top-right-radius: 0; border-bottom-right-radius: 0; font-size: .85rem; height: auto; position: relative; flex: 1 1 auto; width: 1%; min-width: 0; margin-bottom: 0; display: inline-block; vertical-align: middle;  background-color: white !important; padding: 0.375rem 0.75rem; font-weight: 400; line-height: 1.5; color: #6e707e; background-clip: padding-box; border-radius: .35rem; transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; overflow: visible; margin: 0; font-family: inherit; }
+#search .search-input-append { margin-left: -6px; display: flex; }
+#search .search-btn-input { cursor: pointer; position: relative; z-index: 2; color: white; background-color: #4e73df; border-color: #4e73df; display: inline-block; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: .35rem; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: .35rem; border-bottom-right-radius: .35rem;}
+#search .search-btn-text { font-weight: 900; font-family: "Font Awesome 5 Free"; font-size: .875rem; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; }
+
+#search .search-result { margin-top: 1rem !important; }
+#search .tabmenu { padding-left: 2rem; }
+#search .tabs { margin: 0; padding: 0; list-style: none; }
+#search .tabs li { background: white; color: #222; display: inline-block; padding: 10px 15px; cursor:pointer; border: 1px solid #e3e6f0; }
+#search .tabs li.current { background:  black; color: white; }
+#search .tab-content { display: none; background: #ededed; padding: 15px; }
+#search .tab-content.current { display: inherit; }
+#search .table-output { width: 100%; flex: 1 1 auto; min-height: 1px; padding: 1.25rem; background-color: white; width: 100%; border-right-width: 0; clear: both; max-width: none !important; border-collapse: separate !important; border-spacing: 0; border: 1px solid #e3e6f0; color: #838796; }
+#search .table-data-output { width: 100%; }
+#search th { margin: 0; width: 200px; padding-right: 30px; border-left-width: 0; cursor: pointer; position: relative; box-sizing: content-box; border-bottom-width: 2px; vertical-align: bottom; border-bottom: 2px solid #e3e6f0; border: 1px solid #e3e6f0; padding: .75rem;  }
+#search td { border-bottom-width: 0; border-left-width: 0; box-sizing: content-box; border: 1px solid #e3e6f0; padding: .75rem; vertical-align: top; }
+
+._error_ { font-size: .85rem; color: red; }
