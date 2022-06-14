@@ -1,24 +1,58 @@
+const wb_model = await tf.loadLayersModel("model/tfjs_Width_bead/model.json");
+const hb_model = await tf.loadLayersModel("model/tfjs_Height_bead/model.json");
+const db_model = await tf.loadLayersModel("model/tfjs_Depth_bead/model.json");
+const wh_model = await tf.loadLayersModel("model/tfjs_Width_HAZ/model.json");
+const dh_model = await tf.loadLayersModel("model/tfjs_Depth_HAZ/model.json");
+
+let index = 1;
+var option = 0;
+
 $(document).ready(function(){
 
     $('ul.tabs li').click(function(){
-    var tab_id = $(this).attr('data-tab');
-    
-    $('ul.tabs li').removeClass('current');
-    $('.tab-content').removeClass('current');
-    
-    $(this).addClass('current');
-    $("#"+tab_id).addClass('current');
+        var tab_id = $(this).attr('data-tab');
+
+        switch (tab_id) {
+            case 'tab-1':
+                option = 0;
+                $('#search_val').attr('placeholder','520~1170');
+                $('#search_val').val('');
+                break;
+            case 'tab-2':
+                option = 1;
+                $('#search_val').attr('placeholder','70~150');
+                $('#search_val').val('');
+                break;
+            case 'tab-3':
+                option = 2;
+                $('#search_val').attr('placeholder','10~170');
+                $('#search_val').val('');
+                break;
+            case 'tab-4':
+                option = 3;
+                $('#search_val').attr('placeholder','800~1500');
+                $('#search_val').val('');
+                break;
+            case 'tab-5':
+                option = 4;
+                $('#search_val').attr('placeholder','210~470');
+                $('#search_val').val('');
+                break;
+            default:
+                break;
+        }
+        
+        $('ul.tabs li').removeClass('current');
+        //$('.tab-content').removeClass('current');
+
+        $(this).addClass('current');
+        //$("#"+tab_id).addClass('current');
+
     })
     
 })
 
-const wb_model = await tf.loadLayersModel("model/model.json");
-const hb_model = await tf.loadLayersModel("model/model.json");
-const db_model = await tf.loadLayersModel("model/model.json");
-const wh_model = await tf.loadLayersModel("model/model.json");
-const dh_model = await tf.loadLayersModel("model/model.json");
 
-let index = 1;
 
 $("#search_btn").click(function(){
 
@@ -39,7 +73,39 @@ $("#search_btn").click(function(){
 
     console.log(_low_, _high_);
 
-    let model = wb_model;
+    var model;
+    var tab = 'tab-1';
+
+    switch (option) {
+        case 0:
+            model = wb_model;
+            tab = 'tab-1';
+            break;
+        case 1:
+            model = hb_model;
+            tab = 'tab-2';
+            break;
+        case 2:
+            model = db_model;
+            tab = 'tab-3';
+            break;
+        case 3:
+            model = wh_model;
+            tab = 'tab-4';
+            break;
+        case 4:
+            model = dh_model;
+            tab = 'tab-5';    
+            break;
+        default:
+            break;
+    }
+
+    console.log("option : " + option, tab);
+    console.log(model);
+
+    $('.tab-content').removeClass('current');
+    $("#"+tab).addClass('current');
 
     for(var i=0;i<=1000;i++){
         __LP__ = Math.floor(rand(260, 500));
@@ -52,12 +118,12 @@ $("#search_btn").click(function(){
 
         _arr_ = [__LP__, __SS__, __Tj__, __Ts__, __Tp__, __Tc__, __HC__];
 
-        console.log(_arr_);
+        //console.log(_arr_);
         
         let result = model.predict(tf.tensor(_arr_, [1,_arr_.length])).arraySync();
         result = parseInt(result);
 
-        console.log(result);
+        //console.log(result);
 
         if(result >= _low_ && result<=_high_){
             let table_data = "<tr id=table_list"+index+">";
@@ -85,6 +151,7 @@ $("#search_btn").click(function(){
 
 })
 
+/*
 $("#wb").click(function(){
     search("wb");
     $("#wb").removeClass("choose_tab");
@@ -134,3 +201,4 @@ $("#dh").click(function(){
     $("#dh").removeClass("choose_tab");
     $("#dh").toggleClass("choose_tab");
 })
+*/
