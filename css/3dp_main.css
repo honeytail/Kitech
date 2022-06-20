@@ -94,8 +94,9 @@
 #prediction .card-inputbox-input {
     display: block;
     width: 85%;
+    text-align: right;
     height: calc(1.5rem + .75rem + 2px);
-    padding: .375rem .75rem;
+    padding: .7rem 1rem 0.75rem 1rem;
     margin: 0;
     font-family: inherit;
     font-size: 1rem;
