@@ -578,7 +578,7 @@
     display: block;
     width: 90%;
     height: 32px;
-    padding: .7rem 0 0 1rem;
+    padding: .7rem 1rem 0.75rem 1rem;
 
     line-height: 16px;
     font-size: 18px;
